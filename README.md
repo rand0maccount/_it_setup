@@ -15,7 +15,7 @@ Add the following path if you're using an Apple Silicon device:
     eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-After the install run: `brew install anisble`
+After the install run: `brew install ansible`
 
 What is Ansible?
 >Ansible is a suite of software tools that enables infrastructure as code. It is open-source and the suite includes software provisioning, configuration management, and application deployment functionality.
