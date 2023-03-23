@@ -2,14 +2,6 @@
 
 <h2>Gettin' Started </h2>
 
-<h3>First things first!</h3>
-Install OhMyZsh!
-
-Launch yo' Terminal and then run: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-
-
-https://ohmyz.sh/
-
 <h3>Get Yo' Brew On </h3>
 
 https://brew.sh/
