@@ -1,10 +1,34 @@
-- name: "IT Computer Setup"
+- name: IT Computer Setup
   hosts: localhost
-  connection: local
+  become: false
+
+  vars:
+    brew_cask_packages:
+      - iterm2
+      - lastpass
+      - sublime-text
+      - utm
+      - rectangle
+      - visual-studio-code
+    brew_packages:
+      - pyenv
+      - rbenv
+      - tfenv
+      - yamllint
+      - ansible-lint
+
   tasks:
+    - name: Installing OhMyZsh
+      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-  - name: "Install XCode CLI"
-    shell: xcode-select --install
+    - name: Installing Homebrew Cask Packages
+      homebrew_cask:
+        name: "{{ brew_cask_packages }}"
+        state: present
+      register: result
 
-  - name: "Install Homebrew"
-    shell: NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    - name: Install Homebrew Packages
+      homebrew:
+        name: "{{ brew_packages }}"
+        state: present
+      register: result
